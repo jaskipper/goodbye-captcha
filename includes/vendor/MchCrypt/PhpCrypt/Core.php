@@ -51,7 +51,7 @@ class PhpCrypt_Core
 	 * Destructor
 	 *
 	 */
-	public function __destruct()
+	protected function __destruct()
 	{
 
 	}

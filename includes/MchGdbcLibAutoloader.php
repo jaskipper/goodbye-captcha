@@ -30,7 +30,7 @@ if (!defined('PHP_VERSION_ID'))
 
 (PHP_VERSION_ID < 50300)
 	? spl_autoload_register( array( 'MchGdbcLibAutoloader', 'autoLoadLibraryClasses' ), false)
-	: spl_autoload_register( array( 'MchGdbcLibAutoloader', 'autoLoadLibraryClasses' ), false, true );
+	: spl_autoload_register( array( 'MchGdbcLibAutoloader', 'autoLoadLibraryClasses' ), true, true );	// for 8.0, was false, true
 
 final class MchGdbcLibAutoloader
 {

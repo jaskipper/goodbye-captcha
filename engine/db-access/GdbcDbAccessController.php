@@ -49,8 +49,8 @@ final class GdbcDbAccessController
 		{
 			$attemptEntity->Notes = array_filter($attemptEntity->Notes);
 
-			$tokenFieldName   = GdbcSettingsPublicModule::getInstance()->getOption(GdbcSettingsAdminModule::OPTION_HIDDEN_INPUT_NAME);
-			$browserInputName = GdbcRequestController::getPostedBrowserInfoInputName();
+			$tokenFieldName   = GdbcSettingsPublicModule::getInstance()->getOption(GdbcSettingsAdminModule::OPTION_HIDDEN_INPUT_NAME) ?? '';
+			$browserInputName = GdbcRequestController::getPostedBrowserInfoInputName() ?? '';
 
 			$arrKeysToUnset = array($tokenFieldName, $browserInputName, strtolower($tokenFieldName), strtolower($browserInputName), strtoupper($tokenFieldName), strtoupper($browserInputName), '_wpnonce');
 			foreach($arrKeysToUnset as $keyName)
